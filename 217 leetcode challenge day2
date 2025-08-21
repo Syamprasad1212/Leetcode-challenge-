@@ -1,0 +1,15 @@
+class Solution {
+public:
+    bool containsDuplicate(vector<int>& nums) {
+        unordered_set<int>freq;
+        for(int r:nums)
+            {
+                if(freq.count(r))
+                {
+                    return true;
+                }
+                freq.insert(r);
+            }
+        return false;
+    }
+};
