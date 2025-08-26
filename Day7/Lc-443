@@ -1,0 +1,28 @@
+class Solution {
+public:
+    int compress(vector<char>& chars) {
+        int n=chars.size();
+        int res=0;
+        int i=0;
+        while(i<n)
+            {
+        char Curr_char=chars[i];
+                int count=0;
+            
+        while(i<n && chars[i]==Curr_char)
+            {
+                count++;
+                i++;
+            }
+        chars[res++]=Curr_char;
+        if(count>1)
+        {
+            for(char c:to_string(count))
+                {
+                    chars[res++]=c;
+                }
+        }
+            }
+       return res; 
+    }
+};
